@@ -37,7 +37,9 @@ body {
 .carouselContainer {
   background: rgb(237, 234, 234);
   height: 400px;
+  width:100%;
   padding: 0;
+  overflow: hidden;
 }
 
 .title {
@@ -82,11 +84,20 @@ body {
 .slides {
   height: 400px;
   display: none;
+  position: relative;
+  /* overflow: hidden; */
 }
+ .slides p {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-size: 4rem;
+ }
 
 img {
-  object-fit: cover;
-  height: 400px;
+  /* object-fit: cover; */
+  /* height: 400px; */
   width: 100%;
 }
 
