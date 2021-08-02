@@ -101,6 +101,82 @@ img {
   width: 100%;
 }
 
+span#pidgeot{
+    position: relative
+}
+span#pidgeot::after{
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/18.svg);
+    background-color: rgba(0, 0, 0, 0.646);
+    zoom:20%;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    padding:3em;
+    border-radius: 12px;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+span#pidgeot:hover::after{
+    transform: scale(1);
+}
+
+span#magikarp{
+    position: relative
+}
+span#magikarp::after{
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/129.svg);
+    background-color: rgba(0, 0, 0, 0.646);
+    zoom:20%;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    padding:3em;
+    border-radius: 12px;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+span#magikarp:hover::after{
+    transform: scale(1);
+}
+
+span#farfetchd{
+    position: relative
+}
+span#farfetchd::after{
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/83.svg);
+    background-color: rgba(0, 0, 0, 0.646);
+    zoom:20%;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    padding:3em;
+    border-radius: 12px;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+span#farfetchd:hover::after{
+    transform: scale(1);
+}
+
+span#slowpoke{
+    position: relative
+}
+span#slowpoke::after{
+    content: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/79.svg);
+    background-color: rgba(0, 0, 0, 0.646);
+    zoom:20%;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    padding:3em;
+    border-radius: 12px;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+span#slowpoke:hover::after{
+    transform: scale(1);
+}
+
 .vaag {
   animation: vaag 2.3s;
 }

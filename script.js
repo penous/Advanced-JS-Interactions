@@ -19,12 +19,11 @@ const showSlides = () => {
   for (let slide of slides) {
     slide.style.display = 'none';
     slide.classList.remove('active');
-    console.log(slide.firstElementChild.classList);
-    slide.firstElementChild.classList.remove('txt');
+    // slide.firstElementChild.classList.remove('txt');
   }
   slides[counter].style.display = 'block';
   slides[counter].classList.add('active');
-  slides[counter].firstElementChild.classList.add('txt');
+  //   slides[counter].firstElementChild.classList.add('txt');
   setTimeout(() => {
     showSlides();
   }, 3000);
@@ -34,11 +33,12 @@ showSlides();
 
 window.addEventListener('scroll', () => {
   const active = document.querySelector('.active');
-  const txt = document.querySelector('.txt');
+  const txt = document.querySelectorAll('.txt');
   const scroll = window.scrollY;
-  console.log(scroll);
+
   active.style.transform = `translateY(-${scroll * 0.2}px)`;
-  //   txt.style.transform = 'translateX(-50%)';
-  //   txt.style.transform = `translateY(${scroll * 0.4}px)`;
-  txt.style.transform = `translate(-50%, ${scroll * 0.4}px)`;
+  for (let text of txt) {
+    console.log(text);
+    text.style.transform = `translate(-50%, ${scroll * 0.6}%)`;
+  }
 });
