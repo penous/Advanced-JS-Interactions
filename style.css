@@ -186,6 +186,10 @@ span#slowpoke:hover::after{
     transform: scale(1);
 }
 
+span.letter{
+    display: inline-block;
+}
+
 .vaag {
   animation: vaag 2.3s;
 }

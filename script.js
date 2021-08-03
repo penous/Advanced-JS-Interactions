@@ -108,3 +108,31 @@ boxes[1].addEventListener('mousemove', (e) => {
     runner.style.top = top;
   }
 });
+
+// * Final Challenge
+const letters = document.querySelectorAll('.letter');
+
+window.addEventListener('keydown', (e) => {
+  console.log(e.key);
+  letters.forEach((letter) => {
+    if (e.key == letter.innerHTML) {
+      const red = Math.floor(Math.random() * 256);
+      const green = Math.floor(Math.random() * 256);
+      const blue = Math.floor(Math.random() * 256);
+      const letter_deg = Math.floor(Math.random() * 361);
+      letter.style.color = `rgb(${red}, ${green}, ${blue})`;
+      letter.style.transform = `rotate(${letter_deg}deg)`;
+      letter.style.fontSize = '3em';
+    }
+  });
+});
+
+window.addEventListener('keyup', (e) => {
+  letters.forEach((letter) => {
+    if (e.key == letter.innerHTML) {
+      letter.style.color = 'black';
+      letter.style.fontSize = '1em';
+      letter.style.transform = 'none';
+    }
+  });
+});
