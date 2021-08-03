@@ -62,3 +62,49 @@ boxes[0].addEventListener('mousemove', (e) => {
   chaser.style.top = top;
 });
 
+// * Runner
+// Get Runner
+const runner = document.querySelector('.runner');
+
+boxes[1].addEventListener('mousemove', (e) => {
+  // Get bounding box
+  const rect = e.currentTarget.getBoundingClientRect();
+
+  const runner_rect = runner.getBoundingClientRect();
+  let distanceX = Math.abs(e.clientX - runner_rect.left);
+  let distanceY = Math.abs(e.clientY - runner_rect.top);
+
+  let left;
+  if (distanceX < 70) {
+    if (e.clientX < runner_rect.left) {
+      left = `${e.clientX - rect.left + 150}px`;
+    } else {
+      left = `${e.clientX - rect.left - 150}px`;
+    }
+  }
+
+  let top;
+  if (distanceY < 70) {
+    if (e.clientY < runner_rect.top) {
+      top = `${e.clientY - rect.top + 80}px`;
+    } else if (e.clientY > runner_rect.top + 50) {
+      top = `${e.clientY - rect.top - 80}px`;
+    }
+  }
+
+  if (runner_rect.left <= rect.left * 0.9) {
+    runner.style.left = '50px';
+  } else if (runner_rect.left >= rect.right) {
+    runner.style.left = `${rect.right - 100}px`;
+  } else {
+    runner.style.left = left;
+  }
+
+  if (runner_rect.top <= rect.top) {
+    runner.style.top = '50px';
+  } else if (runner_rect.top >= rect.bottom) {
+    runner.style.top = `${rect.bottom - 100}px`;
+  } else {
+    runner.style.top = top;
+  }
+});
