@@ -9,6 +9,7 @@ function randomLetter() {
 
 const slides = document.getElementsByClassName('slides');
 
+// * Carousel
 function* generator() {
   while (true) yield* [0, 1];
 }
@@ -31,6 +32,7 @@ const showSlides = () => {
 
 showSlides();
 
+// * Paralax
 window.addEventListener('scroll', () => {
   const active = document.querySelector('.active');
   const txt = document.querySelectorAll('.txt');
@@ -38,7 +40,25 @@ window.addEventListener('scroll', () => {
 
   active.style.transform = `translateY(-${scroll * 0.2}px)`;
   for (let text of txt) {
-    console.log(text);
     text.style.transform = `translate(-50%, ${scroll * 0.6}%)`;
   }
 });
+
+// * Chaser
+// ! Get boxes for both Chaser and Runner
+const boxes = document.querySelectorAll('.box');
+
+// Get Chaser
+const chaser = document.querySelector('.chaser');
+
+boxes[0].addEventListener('mousemove', (e) => {
+  // Get bounding box
+  const rect = e.currentTarget.getBoundingClientRect();
+
+  let left = `${e.clientX - rect.left}px`;
+  let top = `${e.clientY - rect.top}px`;
+
+  chaser.style.left = left;
+  chaser.style.top = top;
+});
+
